@@ -1,0 +1,53 @@
+{%load static %}
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <title>QnA Site</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="/">QnA</a>
+        <div class="collapse navbar-collapse" id ="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <span class="nav-link">👤 {{ user.username }}</span>
+                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'ask_question' %}">Ask Question</a>
+                </li>
+                <li class="nav-item">
+                    <form action="{% url 'logout' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link" style="display:inline;">Logout</button>
+                        
+                    </form>
+                </li>
+                {%else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login'%} ">LOGIN</a>
+                </li>
+                {%endif%}
+            
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+    </nav>
+    <div class="container mt-4">
+
+    {% block content %}{% endblock %}
+</div>
+
+<script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
