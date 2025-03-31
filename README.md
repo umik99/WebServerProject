@@ -1,4 +1,4 @@
-# qna_site
+# 웹서버프로젝트 실습코드
 qna_site django 기본 실습
 
 
