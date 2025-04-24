@@ -4,3 +4,6 @@ qna_site django 기본 실습
 
 #csrf_demo (3/31)
 csrf_demo 프로젝트로 csrf 공격과 방어에 대해 실습 코드 작성
+
+#requestproject (4/24)
+request 요청에 대한 값 template으로 확인, upload_file.html로 파일 업로드 확인 코드 작성
