@@ -14,3 +14,6 @@ login, logout 메서드를 통해 로그인 기능 실습 코드 작성
 
 #httpproject (과제8)
 rest_framework를 활용한 RESTFul 기반의 HTTP Response 응답 실습 코드 작성
+
+#library(과제9)
+library 서비스 레이어 분리 및 예외처리 실습 코드 작성
